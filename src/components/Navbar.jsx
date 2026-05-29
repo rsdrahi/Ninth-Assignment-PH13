@@ -5,7 +5,7 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <div className='shadow-md rounded-2xl px-5 border'>
+    <div className='shadow px-5 '>
       <nav className="flex justify-between items-center py-3 container mx-auto w-full">
         <Link href={'/'}>
           <div className='flex items-center gap-2'>
@@ -16,7 +16,7 @@ const Navbar = () => {
               width={40}
               className='rounded-full'
             />
-            <h3 className='font-bold text-xl text-cyan-400'>DocAppoint</h3>
+            <h3 className='font-bold text-xl bg-gradient-to-r from-sky-500 to-teal-400 bg-clip-text text-transparent'>DocAppoint</h3>
           </div>
         </Link>
 
@@ -41,12 +41,12 @@ const Navbar = () => {
         <ul className="flex items-center gap-5 text-sm">
           <li>
             <Link href={"/register"}>
-              <Button variant="outline">Register</Button>
+              <Button variant="outline" className={'bg-gradient-to-r from-sky-500 to-teal-400 bg-clip-text text-transparent'}>Register</Button>
             </Link>
           </li>
           <li>
             <Link href={"/login"}>
-              <Button variant="outline">Login</Button>
+              <Button variant="outline" className={'bg-gradient-to-r from-sky-500 to-teal-400 bg-clip-text text-transparent'}>Login</Button>
             </Link>
           </li>
         </ul>
