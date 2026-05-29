@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-screen bg-white text-black">
         <Navbar></Navbar>
-        <main>
+        <main className="container m-auto">
           {children}
         </main>
         <Footer></Footer>

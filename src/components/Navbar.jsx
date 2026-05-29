@@ -5,7 +5,7 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <div className='shadow px-5 '>
+    <div className='shadow-md px-5 mb-8'>
       <nav className="flex justify-between items-center py-3 container mx-auto w-full">
         <Link href={'/'}>
           <div className='flex items-center gap-2'>
