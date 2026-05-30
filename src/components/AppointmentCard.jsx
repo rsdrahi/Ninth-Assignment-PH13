@@ -8,14 +8,14 @@ const AppointmentCard = ({ appointment }) => {
 
   return (
     <Card>
-      <div className='relative aspect-square'>
+      <div className='relative overflow-hidden aspect-square'>
         <Image
           src={image}
           alt='Doctor Image'
           // height={200}
           // width={200}
           fill
-          className='w-full object-cover rounded-lg'
+          className='object-cover rounded-lg'
         />
       </div>
       <div>
