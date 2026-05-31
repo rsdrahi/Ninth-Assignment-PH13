@@ -13,7 +13,7 @@ const DoctorsDetails = async ({ params }) => {
   // console.log(id, "Id");
   const res = await fetch(`${process.env.NEXT_CLIENT_API_URL}/all-appointment/${id}`);
   const doctorDetails = await res.json(id)
-  console.log(doctorDetails, "Details");
+  // console.log(doctorDetails, "Details");
   const { name, image, description, fee, specialty, hospital, experience, location, availability } = doctorDetails
 
   return (

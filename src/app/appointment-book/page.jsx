@@ -6,7 +6,7 @@ import React from 'react';
 const AppointmentBook = () => {
   return (
     <div className='max-w-2xl m-auto'>
-      <div className=' text-center my-3 space-y-2'>
+      <div className='text-center my-3 space-y-2'>
         <h2 className='font-bold text-2xl text-teal-900'>Appointment Book</h2>
         <p className='text-muted font-medium'>Fill The Form Below To Your Next Appointment</p>
       </div>
