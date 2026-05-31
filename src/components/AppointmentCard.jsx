@@ -1,10 +1,11 @@
 import { Button, Card, Separator } from '@heroui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const AppointmentCard = ({ appointment }) => {
 
-  const { name, image, description, fee, specialty, hospital } = appointment
+  const { name, image, description, fee, specialty, hospital, _id } = appointment
 
   return (
     <Card>
@@ -31,7 +32,11 @@ const AppointmentCard = ({ appointment }) => {
           <p> <span className='font-bold'>Fee:</span> ৳{fee}</p>
           <p> <span className='font-bold'>Visit:</span> {hospital}</p>
         </div>
-        <Button>View Details</Button>
+        <Link href={`/all-appointment/${_id}`}>
+          <Button>
+            View Details
+          </Button>
+        </Link>
       </div>
     </Card>
   );

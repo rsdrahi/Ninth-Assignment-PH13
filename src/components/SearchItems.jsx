@@ -1,4 +1,4 @@
-import { Label, SearchField } from "@heroui/react";
+import { Button, Label, SearchField } from "@heroui/react";
 
 export function SearchItems() {
   return (
@@ -7,6 +7,7 @@ export function SearchItems() {
         <SearchField.SearchIcon />
         <SearchField.Input placeholder="Search..." />
         <SearchField.ClearButton />
+        <Button className={'my-3 rounded-s-none rounded-e-lg'}>Search</Button>
       </SearchField.Group>
     </SearchField>
   );
