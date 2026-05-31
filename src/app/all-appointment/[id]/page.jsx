@@ -1,4 +1,3 @@
-import { AppointmentModal } from '@/components/AppointmentModal';
 import { Button, Separator } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -60,7 +59,9 @@ const DoctorsDetails = async ({ params }) => {
             }
           </div>
         </div>
-        <Button variant='outline' className={'bg-gradient-to-r from-sky-500 to-teal-400 bg-clip-text text-transparent'}>Book Appointment</Button>
+        <Link href={'/appointment-book'}>
+          <Button variant='outline' className={'bg-gradient-to-r from-sky-500 to-teal-400 bg-clip-text text-transparent'}>Book Appointment</Button>
+        </Link>
       </div>
     </div>
   );
