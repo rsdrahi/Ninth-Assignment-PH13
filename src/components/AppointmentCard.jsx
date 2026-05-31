@@ -33,7 +33,7 @@ const AppointmentCard = ({ appointment }) => {
           <p> <span className='font-bold'>Visit:</span> {hospital}</p>
         </div>
         <Link href={`/all-appointment/${_id}`}>
-          <Button>
+          <Button variant="outline" className={'bg-gradient-to-r from-sky-500 to-teal-400 bg-clip-text text-transparent'}>
             View Details
           </Button>
         </Link>
