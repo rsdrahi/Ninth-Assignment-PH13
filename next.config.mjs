@@ -8,6 +8,12 @@ const nextConfig = {
         hostname: '**images.unsplash.com',
         port: '',
         search: '',
+       },
+       {
+        protocol: 'https',
+        hostname: '**upload.wikimedia.org',
+        port: '',
+        search: '',
       },
     ],
   },
