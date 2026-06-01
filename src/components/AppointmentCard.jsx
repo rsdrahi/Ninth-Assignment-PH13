@@ -8,7 +8,7 @@ const AppointmentCard = ({ appointment }) => {
   const { name, image, description, fee, specialty, hospital, _id } = appointment
 
   return (
-    <Card>
+    <Card className='p-4 border border-slate-200 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500'>
       <div className='relative overflow-hidden aspect-square'>
         <Image
           src={image}
