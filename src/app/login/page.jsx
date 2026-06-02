@@ -1,9 +1,11 @@
 'use client'
 import { authClient } from '@/lib/auth-client';
-import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
+import { Button, Card, Description, FieldError, Form, Input, Label, Separator, TextField } from '@heroui/react';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import React from 'react';
 import toast from 'react-hot-toast';
+import { FcGoogle } from 'react-icons/fc';
 
 const LoginPage = () => {
 
@@ -26,6 +28,11 @@ const LoginPage = () => {
       toast.error("Please SignUp First!")
     }
 
+  }
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    })
   }
 
   return (
@@ -77,6 +84,21 @@ const LoginPage = () => {
             </Button>
           </div>
         </Form>
+        <div className='flex justify-center items-center gap-2'>
+          <Separator className='flex-1' />
+          <div className='whitespace-nowrap'>
+            OR
+          </div>
+          <Separator className='flex-1' />
+        </div>
+        <div>
+          <Button onClick={handleGoogleSignIn} variant='outline' className={'w-full font-semibold'}>
+            <FcGoogle />  Continue With Google
+          </Button>
+          <div className='my-5 text-center'>
+            Don't Have an Account? <Link href={'/register'} className='text-teal-600 font-semibold underline'>Register</Link>
+          </div>
+        </div>
       </Card>
     </div>
   );
