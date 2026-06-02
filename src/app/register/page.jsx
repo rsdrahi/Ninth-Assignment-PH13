@@ -1,7 +1,9 @@
 'use client'
-// import { authClient } from '@/lib/auth-client';
+import { authClient } from '@/lib/auth-client';
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
+import { redirect } from 'next/navigation';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const RegisterPage = () => {
 
@@ -10,14 +12,20 @@ const RegisterPage = () => {
 
     const formData = new FormData(e.currentTarget);
     const user = Object.fromEntries(formData.entries());
-    console.log(user, "User");
-    // const { data, error } = await authClient.signUp.email({
-    //   email: user.email,
-    //   name: user.name,
-    //   password: user.password,
-    //   image: user.image,
-    // })
+    // console.log(user, "User");
+    const { data, error } = await authClient.signUp.email({
+      email: user.email,
+      name: user.name,
+      password: user.password,
+      image: user.image,
+    })
     // console.log({ data, error });
+    if (data) {
+      redirect('/')
+    }
+    if (error) {
+      toast.error("Please SignUp First!")
+    }
   }
 
   return (

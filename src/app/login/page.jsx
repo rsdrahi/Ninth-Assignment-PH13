@@ -1,13 +1,38 @@
 'use client'
+import { authClient } from '@/lib/auth-client';
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
+import { redirect } from 'next/navigation';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const LoginPage = () => {
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const user = Object.fromEntries(formData.entries());
+    console.log(user, 'User');
+
+    const { data, error } = await authClient.signIn.email({
+      email: user.email,
+      password: user.password
+    })
+    console.log({ data, error });
+    if (data) {
+      redirect('/')
+    }
+    else {
+      toast.error("Please SignUp First!")
+    }
+
+  }
+
   return (
     <div className='max-w-2xl mx-auto'>
       <h3 className='font-bold text-2xl text-center my-3 text-teal-800'>Log In</h3>
       <Card className='border'>
-        <Form className="flex flex-col gap-4">
+        <Form onSubmit={onSubmit} className="flex flex-col gap-4">
           <TextField
             isRequired
             name="email"
