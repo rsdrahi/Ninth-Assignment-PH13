@@ -10,9 +10,9 @@ import { TbCoinTaka } from 'react-icons/tb';
 const DoctorsDetails = async ({ params }) => {
 
   const { id } = await params;
-  // console.log(id, "Id");
-  const res = await fetch(`${process.env.NEXT_CLIENT_API_URL}/all-appointment/${id}`);
-  const doctorDetails = await res.json(id)
+  console.log(id, "Id");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/all-appointment/${id}`);
+  const doctorDetails = await res.json()
   // console.log(doctorDetails, "Details");
   const { name, image, description, fee, specialty, hospital, experience, location, availability } = doctorDetails
 
@@ -51,7 +51,7 @@ const DoctorsDetails = async ({ params }) => {
           <h2 className='font-bold text-xl my-2 text-teal-700'>Available</h2>
           <div>
             {
-              availability.map((available, index) => <span
+              availability?.map((available, index) => <span
                 className="rounded-lg border border-primary px-3 py-1 text-sm mr-2 bg-teal-100"
                 key={index}>
                 {available}

@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const FeaturedCard = async ({ }) => {
 
-  const res = await fetch(`${process.env.NEXT_CLIENT_API_URL}/featured`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/featured`)
   const featured = await res.json();
   // console.log(featured, "Featured");
 

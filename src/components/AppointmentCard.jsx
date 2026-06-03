@@ -6,7 +6,7 @@ import React from 'react';
 const AppointmentCard = ({ appointment }) => {
 
   const { name, image, description, fee, specialty, hospital, _id } = appointment
-
+  // console.log(appointment);
   return (
     <Card className='p-4 border border-slate-200 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500'>
       <div className='relative overflow-hidden aspect-square'>

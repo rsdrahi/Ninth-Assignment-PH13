@@ -5,7 +5,7 @@ import React from 'react';
 
 const AllAppointmentPage = async () => {
 
-  const res = await fetch(`${process.env.NEXT_CLIENT_API_URL}/all-appointment`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/all-appointment`)
   const appointments = await res.json();
   console.log(appointments, "Data");
 

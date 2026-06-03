@@ -2,13 +2,31 @@
 import { Check } from '@gravity-ui/icons';
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const AppointmentBook = () => {
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
+    e.preventDefault();
     const formData = new FormData(e.currentTarget)
     const appointment = Object.fromEntries(formData.entries());
-    console.log(appointment);
+    // console.log(appointment);
+
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book-appointment`, {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(appointment)
+    });
+    const data = await res.json();
+    // console.log(data, "Data");
+    if (data) {
+      toast.success('Appointment Booked Successfully')
+    }
+    else {
+      toast.error('Something Went Wrong')
+    }
   }
 
   return (
@@ -31,7 +49,7 @@ const AppointmentBook = () => {
           <TextField
             isRequired
             name="doctorName"
-            type="name"
+            type="text"
           >
             <Label>Doctor Name</Label>
             <Input placeholder="Doctor Name" />
@@ -40,7 +58,7 @@ const AppointmentBook = () => {
           <TextField
             isRequired
             name="patientName"
-            type="name"
+            type="text"
           >
             <Label>Patient Name</Label>
             <Input placeholder="Patient Name" />
@@ -49,7 +67,7 @@ const AppointmentBook = () => {
           <TextField
             isRequired
             name="gender"
-            type="name"
+            type="text"
           >
             <Label>Gender</Label>
             <Input placeholder="Male/Female" />
@@ -58,7 +76,7 @@ const AppointmentBook = () => {
           <TextField
             isRequired
             name="phone"
-            type="number"
+            type="tel"
           >
             <Label>Number</Label>
             <Input placeholder="Input Number" />
