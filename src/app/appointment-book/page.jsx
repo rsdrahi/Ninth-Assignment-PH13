@@ -4,6 +4,13 @@ import { Button, Card, Description, FieldError, Form, Input, Label, TextField } 
 import React from 'react';
 
 const AppointmentBook = () => {
+
+  const onSubmit = (e) => {
+    const formData = new FormData(e.currentTarget)
+    const appointment = Object.fromEntries(formData.entries());
+    console.log(appointment);
+  }
+
   return (
     <div className='max-w-2xl m-auto'>
       <div className='text-center my-3 space-y-2'>
@@ -11,7 +18,7 @@ const AppointmentBook = () => {
         <p className='text-muted font-medium'>Fill The Form Below To Your Next Appointment</p>
       </div>
       <Card className='shadow border border-teal-100'>
-        <Form className="flex flex-col gap-4">
+        <Form onSubmit={onSubmit} className="flex flex-col gap-4">
           <TextField
             isRequired
             name="email"
@@ -23,7 +30,7 @@ const AppointmentBook = () => {
           </TextField>
           <TextField
             isRequired
-            name="name"
+            name="doctorName"
             type="name"
           >
             <Label>Doctor Name</Label>
@@ -32,7 +39,7 @@ const AppointmentBook = () => {
           </TextField>
           <TextField
             isRequired
-            name="name"
+            name="patientName"
             type="name"
           >
             <Label>Patient Name</Label>
@@ -76,12 +83,8 @@ const AppointmentBook = () => {
             <FieldError />
           </TextField>
           <div className="flex gap-2 justify-center">
-            <Button type="submit">
-              <Check />
+            <Button type="submit" className={'w-full'}>
               Submit
-            </Button>
-            <Button type="reset" variant="secondary">
-              Reset
             </Button>
           </div>
         </Form>
