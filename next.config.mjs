@@ -14,7 +14,13 @@ const nextConfig = {
         hostname: '**upload.wikimedia.org',
         port: '',
         search: '',
-      },
+       },
+       {
+         protocol: 'https',
+        hostname: '**lh3.googleusercontent.com',
+        port: '',
+        search: '',
+       },
     ],
   },
   experimental: {
