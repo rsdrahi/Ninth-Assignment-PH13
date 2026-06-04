@@ -15,10 +15,10 @@ const BookingsPage = async () => {
   return (
     <div>
       <h3 className='font-bold text-2xl text-center my-4'>Bookings</h3>
-      <div>
+      <div className='grid lg:grid-cols-2 md:grid-cols-1 gap-5'>
         {
           bookings.map(booking => <BookingCard key={booking._id}
-          booking={booking}
+            booking={booking}
           ></BookingCard>)
         }
       </div>
