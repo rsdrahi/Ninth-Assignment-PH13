@@ -4,6 +4,7 @@ import { AiOutlineUsergroupAdd } from 'react-icons/ai';
 import { FaRegCalendarAlt, FaRegTrashAlt } from 'react-icons/fa';
 import { IoTime } from 'react-icons/io5';
 import { LuSquarePen } from 'react-icons/lu';
+import DeleteCardModal from './DeleteCardModal';
 
 const BookingCard = ({ booking }) => {
   console.log(booking, "Booking");
@@ -19,8 +20,8 @@ const BookingCard = ({ booking }) => {
         </p>
         <p className='flex items-center gap-2'> <FaRegCalendarAlt /> {date}</p>
         <p className='flex items-center gap-2'> <IoTime /> {time}</p>
-        <div className='flex gap-4'>
-          <Button variant='danger'> <FaRegTrashAlt />  Delete</Button>
+        <div className='flex gap-4 justify-end'>
+          <DeleteCardModal booking={booking}></DeleteCardModal>
           <Button variant='outline'> <LuSquarePen /> Update</Button>
         </div>
       </Card>
