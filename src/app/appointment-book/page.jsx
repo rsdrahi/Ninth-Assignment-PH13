@@ -101,8 +101,8 @@ const AppointmentBook = () => {
             <FieldError />
           </TextField>
           <div className="flex gap-2 justify-center">
-            <Button type="submit" className={'w-full'}>
-              Submit
+            <Button type="submit" className={'w-full bg-gradient-to-r from-sky-500 to-teal-400 text-black'}>
+              Book Appointment
             </Button>
           </div>
         </Form>

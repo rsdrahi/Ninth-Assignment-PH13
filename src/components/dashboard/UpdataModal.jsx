@@ -70,7 +70,7 @@ const UpdataModal = ({ booking }) => {
                       />
                     </TextField>
                     <Modal.Footer>
-                      <Button type="submit" slot="close" className={'w-full'}>Save Changes</Button>
+                      <Button type="submit" slot="close" className={' w-full bg-gradient-to-r from-sky-500 to-teal-400 text-black'}>Save Changes</Button>
                     </Modal.Footer>
                   </form>
                 </Surface>
