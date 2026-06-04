@@ -22,7 +22,7 @@ const AppointmentBook = () => {
     const data = await res.json();
     // console.log(data, "Data");
     if (data) {
-      toast.success('Appointment Booked Successfully')
+      toast.success('Appointment Booked Successfully');
     }
     else {
       toast.error('Something Went Wrong')

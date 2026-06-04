@@ -55,10 +55,12 @@ const Navbar = () => {
         <ul className="flex items-center gap-5 text-sm">
           {user ? <>
             <li>
-              <Avatar>
-                <Avatar.Image referrerPolicy='no-referrer' alt="" src={user?.image} />
-                <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
-              </Avatar>
+              <Link href={'/dashboard'}>
+                <Avatar>
+                  <Avatar.Image referrerPolicy='no-referrer' alt="" src={user?.image} />
+                  <Avatar.Fallback>{user?.name[0]}</Avatar.Fallback>
+                </Avatar>
+              </Link>
             </li>
             <li>
               <Button onClick={handleLogOut} variant="outline" className={'bg-gradient-to-r from-red-500 to-red-900 bg-clip-text text-transparent'}>Log Out</Button>
