@@ -14,7 +14,7 @@ const FeaturedCard = async ({ }) => {
       <div className='flex justify-between items-center'>
         <h2 className='font-bold text-2xl'>Feature </h2>
         <Link href={'/all-appointment'}>
-          <Button>View All Doctors</Button>
+          <Button variant='outline' className={'bg-gradient-to-r from-sky-500 to-teal-400 text-black rounded-full hover:bg-blue-700'}>View All Doctors</Button>
         </Link>
       </div>
       <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 my-6'>

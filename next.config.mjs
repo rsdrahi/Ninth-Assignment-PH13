@@ -1,32 +1,24 @@
-/** @type {import('next').NextConfig} */
+/** @type {import('next').Next} */
 const nextConfig = {
-  /* config options here */
-   images: {
+  output: 'standalone',
+  experimental: {
+    serverComponentsExternalPackages: ['@better-auth/kysely-adapter', 'kysely'],
+  },
+  images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**images.unsplash.com',
+        hostname: '**',
         port: '',
+        pathname: '**',
         search: '',
-       },
-       {
+      },
+      {
         protocol: 'https',
-        hostname: '**upload.wikimedia.org',
-        port: '',
-        search: '',
-       },
-       {
-         protocol: 'https',
-        hostname: '**lh3.googleusercontent.com',
-        port: '',
-        search: '',
-       },
+        hostname: 'images.pexels.com',
+      }
     ],
   },
-  experimental: {
-serverComponentsExternalPackages: ['@better-auth/kysely-adapter'],
-},
 };
-
 
 export default nextConfig;
