@@ -8,7 +8,7 @@ export const metadata = {
 
 const BookingsPage = async () => {
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book-appointment`, {
+  const res = await fetch(`https://doc-appoint-server-three.vercel.app/book-appointment`, {
     method: "GET",
     headers: {
       'content-type': 'application/json'
