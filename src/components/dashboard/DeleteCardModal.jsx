@@ -1,11 +1,11 @@
 'use client'
 import { AlertDialog, Button } from '@heroui/react';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { FaRegTrashAlt } from 'react-icons/fa';
 
 const DeleteCardModal = ({ booking }) => {
-
+  const router = useRouter();
   const { _id } = booking
 
   const handleDelete = async () => {
@@ -16,7 +16,6 @@ const DeleteCardModal = ({ booking }) => {
       }
     })
     const data = await res.json();
-    redirect('/all-appointment')
     // console.log(data, "Data Delete");
   }
 

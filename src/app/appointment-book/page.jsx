@@ -1,10 +1,13 @@
 "use client"
 import { Check } from '@gravity-ui/icons';
 import { Button, Card, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import toast from 'react-hot-toast';
 
 const AppointmentBook = () => {
+
+  const router = useRouter();
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +26,7 @@ const AppointmentBook = () => {
     // console.log(data, "Data");
     if (data) {
       toast.success('Appointment Booked Successfully');
+      router.refresh();
     }
     else {
       toast.error('Something Went Wrong')
