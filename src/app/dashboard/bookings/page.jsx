@@ -1,6 +1,11 @@
 import BookingCard from '@/components/dashboard/BookingCard';
 import React from 'react';
 
+export const metadata = {
+  title: "Doc Appoint- My Bookings",
+  description: "Best Site to Appoint a Specialist",
+};
+
 const BookingsPage = async () => {
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book-appointment`, {

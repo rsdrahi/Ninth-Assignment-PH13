@@ -1,4 +1,6 @@
+import { auth } from '@/lib/auth';
 import { Button, Separator } from '@heroui/react';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -7,11 +9,23 @@ import { FaLocationDot } from 'react-icons/fa6';
 import { IoTime } from 'react-icons/io5';
 import { TbCoinTaka } from 'react-icons/tb';
 
+export const metadata = {
+  title: "Doc Appoint - All Doctors",
+  description: "Best Site to Appoint a Specialist",
+};
+
 const DoctorsDetails = async ({ params }) => {
 
   const { id } = await params;
-  console.log(id, "Id");
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/all-appointment/${id}`);
+  const { token } = await auth.api.getToken({
+    headers: await headers(),
+  })
+  // console.log(token, "Token");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/all-appointment/${id}`, {
+    headers: {
+      authorization: `Bearer ${token}`
+    }
+  });
   const doctorDetails = await res.json()
   // console.log(doctorDetails, "Details");
   const { name, image, description, fee, specialty, hospital, experience, location, availability } = doctorDetails

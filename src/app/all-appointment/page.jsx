@@ -1,13 +1,18 @@
+''
 import AppointmentCard from '@/components/AppointmentCard';
 import { SearchItems } from '@/components/SearchItems';
 import { SearchField } from '@heroui/react';
-import React from 'react';
+
+export const metadata = {
+  title: "Doc Appoint- All-Appointment",
+  description: "Best Site to Appoint a Specialist",
+};
 
 const AllAppointmentPage = async () => {
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/all-appointment`)
   const appointments = await res.json();
-  console.log(appointments, "Data");
+  // console.log(appointments, "Data");
 
 
   return (
