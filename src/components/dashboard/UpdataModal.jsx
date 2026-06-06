@@ -18,7 +18,7 @@ const UpdataModal = ({ booking }) => {
       body: JSON.stringify(bookings)
     })
     const data = await res.json();
-    console.log(data, "Data");
+    // console.log(data, "Data"); 
   }
 
   return (

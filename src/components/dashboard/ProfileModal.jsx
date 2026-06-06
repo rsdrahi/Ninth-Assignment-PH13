@@ -19,17 +19,18 @@ const ProfileModal = ({ user, onSubmit }) => {
                   <form onSubmit={onSubmit} className="flex flex-col gap-4">
                     <TextField defaultValue={user?.name} className="w-full" name="name" type="text" variant="secondary">
                       <Label>User Name:</Label>
-                      <Input placeholder="Enter user name"
-                        name="name"
+                      <Input name="name"
+                        // defaultValue={user?.name}
+                        placeholder="Enter user name"
                       />
                     </TextField>
                     <TextField defaultValue={user?.image}
                       className="w-full"
                       variant="secondary">
                       <Label>Image</Label>
-                      <Input placeholder="Enter image url"
-                        type="url"
-                        name="image"
+                      <Input name="image"
+                        // defaultValue={user?.image}
+                        placeholder="Enter image url"
                       />
                     </TextField>
                     <Modal.Footer>
