@@ -1,8 +1,13 @@
 'use client'
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
+import { refresh } from "next/cache";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 import { LuSquarePen } from 'react-icons/lu';
 
 const UpdataModal = ({ booking }) => {
+
+  const router = useRouter();
 
   const { doctorName, patientName, date, time, _id } = booking
   const onSubmit = async (e) => {
@@ -19,6 +24,10 @@ const UpdataModal = ({ booking }) => {
     })
     const data = await res.json();
     // console.log(data, "Data"); 
+    if (date) {
+      router.refresh();
+      toast.success("Update Successful")
+    }
   }
 
   return (

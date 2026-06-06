@@ -22,6 +22,7 @@ const LoginPage = () => {
     })
     console.log({ data, error });
     if (data) {
+      toast.success('Logged in Successful')
       redirect('/')
     }
     else {

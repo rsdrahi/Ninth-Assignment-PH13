@@ -2,6 +2,7 @@
 import { AlertDialog, Button } from '@heroui/react';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import toast from 'react-hot-toast';
 import { FaRegTrashAlt } from 'react-icons/fa';
 
 const DeleteCardModal = ({ booking }) => {
@@ -17,6 +18,10 @@ const DeleteCardModal = ({ booking }) => {
     })
     const data = await res.json();
     // console.log(data, "Data Delete");
+    if (data) {
+      router.refresh();
+      toast.error('Delete Appointment')
+    }
   }
 
   return (

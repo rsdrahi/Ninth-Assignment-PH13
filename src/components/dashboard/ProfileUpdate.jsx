@@ -2,6 +2,7 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import ProfileModal from './ProfileModal';
 import { authClient } from '@/lib/auth-client';
+import { refresh } from 'next/cache';
 
 const ProfileUpdate = ({ user }) => {
 
@@ -24,6 +25,7 @@ const ProfileUpdate = ({ user }) => {
         image: update?.image,
         name: update?.name,
       })
+      refresh
     }
   }
 

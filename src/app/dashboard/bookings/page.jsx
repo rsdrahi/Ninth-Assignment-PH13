@@ -1,5 +1,6 @@
 export const dynamic = "force-dynamic";
 import BookingCard from '@/components/dashboard/BookingCard';
+import { refresh } from 'next/cache';
 import React from 'react';
 
 export const metadata = {
@@ -17,7 +18,7 @@ const BookingsPage = async () => {
     }
   })
   const bookings = await res.json();
-  console.log(bookings, "Data");
+  // console.log(bookings, "Data");
 
   return (
     <div>
